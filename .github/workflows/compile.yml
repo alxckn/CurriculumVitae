@@ -16,7 +16,7 @@ jobs:
     - uses: actions/upload-artifact@master
       with:
         name: CV-french
-        path: CV_Chakroun.tex
+        path: CV_Chakroun.pdf
     - name: Compile English
       uses: xu-cheng/latex-action@master
       with:
@@ -24,4 +24,4 @@ jobs:
     - uses: actions/upload-artifact@master
       with:
         name: CV-english
-        path: CV_Chakroun_en.tex
+        path: CV_Chakroun_en.pdf
