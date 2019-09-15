@@ -1,79 +1,126 @@
-\documentclass[10pt,a4paper]{moderncv}
-\moderncvtheme[blue]{classic}                
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvtheme[blue]{classic}
 \usepackage[utf8]{inputenc}
 \usepackage[vscale=0.85,hscale=0.8]{geometry}
+% \setlength{\hintscolumnwidth}{2.5cm}
 
+\makeatletter
+\let\origsection\section
+\renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
+
+\newcommand\nostarsection[1]
+{\sectionprelude\origsection{#1}\sectionpostlude}
+
+\newcommand\starsection[1]
+{\sectionprelude\origsection*{#1}\sectionpostlude}
+
+\newcommand\sectionprelude{%
+  \vspace{0em}
+}
+
+\newcommand\sectionpostlude{%
+  \vspace{0.5em}
+}
+\makeatother
 
 \firstname{Alexandre\strut}
-\familyname{Chakroun}            
-\address{30 rue Carnot\\93310\\}{Le Pré-Saint-Gervais}    
-\mobile{+33 (0)6 80 88 25 48}                    
-\email{alexandre.chakroun@centraliens-lille.org}
+\familyname{Chakroun}
+\address{30 rue Carnot\\93310\\}{Le Pré-Saint-Gervais}
+\mobile{+33 (0)6 80 88 25 48}
+\email{alexandre.chakroun@gmail.com}
 \photo[64pt][0.4pt]{photoalex2.JPG}
-\quote{Recherche un CDI à partir de Novembre 2016}
+% \quote{En recherche de nouvelles opportunités}
 
 \begin{document}
 	\makecvtitle
-	
-	\section{Diplômes et Études}
-	\cventry{2012 -- 2016}{Ingénieur de l'Ecole Centrale de Lille}{}{}{}{Option E-Business et Mobilité 2015 - 2016\\Alternance en entreprise 2015 - 2016\\Césure en entreprise 2014 - 2015}
-	\cventry{2010 -- 2012}{Classes préparatoires PCSI, PC*}{Lycée Champollion}{Grenoble}{}{}
-	\cventry{2009}{Baccalauréat série S}{Mention Bien}{Académie de Grenoble}{}{}
-	
-	\section{Expériences}
-	
+
+	\vspace*{-2.5\baselineskip}
+	\section{Motivations}
+
+	\cvitem{}{
+		\textbf{Sujets techniques innovants et stimulants}
+		\begin{itemize}
+			\item Environnement exigeant
+			\item Problématiques complexes
+			\item Applications à haute disponibilité et forte demande
+		\end{itemize}
+		}
+
+	\cvitem{}{
+		\textbf{Elargir le champs de mes compétences}
+		\begin{itemize}
+			\item Remise en question
+			\item Apprendre, découvrir : nouvelles techniques, technologies, pays, cultures...
+		\end{itemize}
+		}
+
+	\cvitem{}{
+		\textbf{Composante managériale}
+		\begin{itemize}
+			\item Evolution vers un rôle de leader technique / chef de projet
+			\item Développement de mes aptitudes en management
+		\end{itemize}
+		}
+
+	\section{Formations et expériences professionnelles}
+
+	\cventry{Depuis Nov 2016}{Lead Developer}{Greenworking}{Paris}{France}{
+		\begin{itemize}
+			\item Développeur polyvalent (projets web, analyse de données et statistique, devops)
+			\item Construction de la plateforme de sondage et de recommandations gPulse (Qualité de vie au travail)
+			\item Compétences acquises : \begin{itemize}
+				\item \textbf{Gestion de projet} - spécifications et planification (Kanban, méthode agile), choix technologiques
+				\item \textbf{Qualité de code} - peer review, intégration et déploiements continus, analyses statiques de code (sécurité)
+				\item \textbf{Lead dev} - montée en compétence des développeurs/stagiaires, organisation de conférences internes, entretiens de recrutement technique
+				\item \textbf{Contact client} - présentations techniques, récolte des besoins, conformité
+				\item \textbf{Technologies} - \textbf{Ruby} (RoR, Sidekiq), \textbf{Python3} (pandas, numpy), MySQL, Redis, RabbitMQ
+			\end{itemize}
+		\end{itemize}{\vspace{0.5cm}}}
+
 	\cventry{Sep 2015 -- \newline Sep 2016}{Assistant étude et développement}{Worldline (prec. ATOS Worldline)}{Bezons}{France}{
 		\begin{itemize}
 			\item Développement de la plateforme CAIM de ciblage client contextuelle
 			\item Conception et développement du Proof of Concept EUROWP (English Use of Railways on Wasabi Platform)
-		\end{itemize}{}}
-	
+			\item Compétences : \begin{itemize}
+				\item Gestion de projet (POC EUROWP) - MS Project, méthode agile
+				\item Technologies - Java, PostGreSQL (GreenPlum), Hadoop, Hive, Cassandra, MongoDB
+			\end{itemize}
+		\end{itemize}{\vspace{0.5cm}}}
+
 	\cventry{2015 -- 2016}{Spécialisation E-Business et Mobilité}{Ecole Centrale de Lille}{}{}{
 		\begin{itemize}
-			\item Technologies web (Java, PHP, Symfony, Javascript, Node, Angular), gestion de projet, modélisation d'entreprise avec UML et BPMN (Bonita, MEGA, MagicDraw) et marketing (orienté E-Commerce)
-			\item Projets d'étude:
-			\begin{itemize}
-				\item Développement du site de gestion du fablab de l'école
-				\item Conception, construction et développement d'un robot intelligent avec lequel il est possible de converser. Primé aux félicitations 2014 de Centrale Lille.
-				\item Conception d'une application mobile, téléchargement d'extraits de livres dans des zones de faible couverture réseau
+			\item Technologies web, gestion de projet, modélisation d'entreprise et marketing (orienté E-Commerce)
+			\item Projets d'étude comprenant le développement du site du fablab de l'école, la construction d'un robot intelligent capable de converser ainsi que d'une application mobile mettant à disposition des extraits de livres.
+			\item Compétences : \begin{itemize}
+				\item Modélisation d'entreprise - UML, BPMN (Bonita, MEGA, MagicDraw)
+				\item Marketing - E-Commerce
+				\item Technologies - Java, PHP (Symfony), Javascript (NodeJS, Angular), Oracle
 			\end{itemize}
 		\end{itemize}
-		{}}
-	
-	\cventry{Nov 2014 -- \newline Mai 2015}{Stagiaire en avant-vente}{Worldline (prec. ATOS Worldline)}{Bezons}{France}{
+		{\vspace{0.5cm}}}
+
+	\cventry{Juin 2014 -- \newline Mai 2015}{Césure R\&D et avant-vente}{Worldline (prec. ATOS Worldline)}{Allemagne/France}{}{
 		\begin{itemize}
-			\item Gestion des plateformes de travail collaboratif (Bluekiwi et SharePoint)
-			\item Participation à l'élaboration d'études et de propositions commerciales (cartes pétrolières et wallet)
+			\item Amélioration de la détection des fraudes en temps réel avec la logique floue
+			\item Community Manager, études et propositions commerciales (cartes pétrolières et wallet)
+			\item Compétences : \begin{itemize}
+				\item Applications de la logique floue
+				\item Stratégies de réponses aux appels d'offres
+				\item Etudes de marchés
+				\item Technologies - Java 7
+			\end{itemize}
 		\end{itemize}
-		{}}
-	
-	\cventry{Juin 2014 -- \newline Nov 2014}{Stagiaire en R\&D}{Worldline (prec. ATOS Worldline)}{Aachen}{Allemagne}{
-		Conception et développement d'un Proof of Concept améliorant la détection de la fraude à la carte bancaire grâce à la logique floue 
-		{}}
-	
-	\enlargethispage{2cm}
-	
-	\section{Compétences}
-	\subsection{Informatique}
-	
-	\cvlanguage{Dev Web}{Java, PHP, Javascript, HTML, CSS}{}
-	
-	\cvlanguage{Script / Stat}{Bash, Python, R}{}
-	
-	\cvlanguage{OS}{Linux, Windows}{}
-	
-	\cvlanguage{Data}{MySQL, Oracle,  PostGreSQL (GreenPlum), Hadoop, Hive, Cassandra, MongoDB}{}
-	
-	\subsection{Gestion de Projet}
-	
-	\cvlanguage{Modélisation}{UML, BPMN, MEGA, MagicDraw, Bonita}{}
-	
-	\cvlanguage{Gestion}{MS Project}{}
-	
-	\subsection{Langues}
-	\cvlanguage{Anglais}{courant, oral et écrit}{TOEIC 980/990}
+		{\vspace{0.5cm}}}
+
+	% Etudes
+	\cventry{2012 -- 2016}{Ingénieur de l'Ecole Centrale de Lille}{}{}{}{{\vspace{0.2cm}}}
+	\cventry{2010 -- 2012}{Classes préparatoires PCSI, PC*}{Lycée Champollion}{Grenoble}{}{{\vspace{0.2cm}}}
+	\cventry{2009}{Baccalauréat série S}{Mention Bien}{Académie de Grenoble}{}{{}}
+
+	\section{Langues}
+	\cvlanguage{Anglais}{courant, oral et écrit - TOEIC 980/990}{}
 	\cvlanguage{Allemand}{scolaire}{}
-	
+
 	\section{Centres d'intérêt}
 	\cvdoubleitem{Loisirs}{
 		\begin{itemize}
@@ -85,6 +132,6 @@
 			\item Nouvelles technologies
 			\item Voyages
 		\end{itemize}}
-		
-		
+
+
 \end{document}
