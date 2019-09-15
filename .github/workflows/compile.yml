@@ -19,6 +19,7 @@ jobs:
       uses: xu-cheng/latex-action@master
       with:
         root_file: CV_Chakroun_en.tex
+        args: -xelatex -file-line-error -interaction=nonstopmode
 
     - run: mkdir -p CVs
     - run: mv CV_Chakroun.pdf CVs/CV_Chakroun_fr.pdf
