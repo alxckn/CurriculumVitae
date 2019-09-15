@@ -1,0 +1,29 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Compile French
+      uses: xu-cheng/latex-action@master
+      with:
+        root_file: CV_Chakroun.tex
+
+    - name: Compile English
+      uses: xu-cheng/latex-action@master
+      with:
+        root_file: CV_Chakroun_en.tex
+
+    - run: mkdir -p CVs
+    - run: mv CV_Chakroun.pdf CVs/CV_Chakroun_fr.pdf
+    - run: mv CV_Chakroun_en.pdf CVs/
+    - uses: actions/upload-artifact@master
+      with:
+        name: CVs
+        path: CVs
